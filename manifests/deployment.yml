@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: amitbhatiktestrepo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amitbhatiktestrepo
+  template:
+    metadata:
+      labels:
+        app: amitbhatiktestrepo 
+    spec:
+      containers:
+        - name: amitbhatiktestrepo 
+          image: testamitbhati.azurecr.io/amitbhatiktestrepo
+          ports:
+          - containerPort: 80
