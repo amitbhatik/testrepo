@@ -17,6 +17,7 @@ variables:
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'testamitbhati47bb-auth'
+  azureSubscription: 
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -38,7 +39,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
+        tags: 'AKS AAD Service Connection'
           $(tag)
 
     - upload: manifests
